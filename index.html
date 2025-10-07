@@ -1,43 +1,196 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <!-- Metadata -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carlos Alvarez</title>
-    <!-- Import Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-
-    <!-- Import Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Import Style from static/css/style.css -->
-    <link rel="stylesheet" href="">
-
-    <style>
-        body {
-            background-color: blue;
-            -webkit-text-fill-color: white;
-            -webkit-text-stroke-width: 1px;
-            -webkit-text-stroke-color: black;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Carlos D. Alvarez — Portfolio</title>
+  <meta name="description" content="Cybersecurity + Software development portfolio of Carlos D. Alvarez." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
+  <style>
+    :root{
+      --bg:#0b0c10;--card:#111218;--muted:#9aa0a6;--text:#e8eaed;--acc:#4f46e5;--chip:#1b1c25;
+    }
+    *{box-sizing:border-box} html,body{margin:0;padding:0}
+    body{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;
+         background:var(--bg); color:var(--text); line-height:1.6}
+    a{color:var(--acc); text-decoration:none} a:hover{text-decoration:underline}
+    .wrap{max-width:1100px;margin:auto;padding:24px}
+    header{position:relative; border-radius:24px; overflow:hidden; background:#0d0f14}
+    header .hero{
+      min-height:58vh; display:grid; place-items:center; text-align:center; padding:48px 16px;
+      background:linear-gradient( to bottom, rgba(0,0,0,.55), rgba(0,0,0,.8) ), url('./pxfuel.jpg') center/cover no-repeat;
+    }
+    .title{font-size:clamp(32px,5vw,56px); margin:0 0 8px}
+    .subtitle{color:var(--muted); font-size:clamp(16px,2.4vw,20px); margin:0 auto; max-width:800px}
+    .cta{margin-top:20px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap}
+    .btn{background:var(--acc); color:#fff; padding:12px 18px; border-radius:12px; font-weight:600; display:inline-block}
+    .btn.ghost{background:transparent; border:1px solid var(--acc); color:var(--acc)}
+    nav{display:flex; gap:16px; justify-content:center; padding:14px}
+    nav a{color:#cbd5e1}
+    section{margin:48px 0}
+    h2{font-size:28px; margin:0 0 16px}
+    .grid{display:grid; gap:16px}
+    @media(min-width:720px){ .grid.cols-2{grid-template-columns:1fr 1fr} .grid.cols-3{grid-template-columns:repeat(3,1fr)} }
+    .card{background:var(--card); border:1px solid #202231; padding:18px; border-radius:16px}
+    .chips{display:flex; flex-wrap:wrap; gap:8px}
+    .chip{background:var(--chip); color:#cbd5e1; padding:6px 10px; border-radius:999px; font-size:13px}
+    footer{color:var(--muted); text-align:center; padding:32px 0}
+    .topbar{position:sticky; top:0; backdrop-filter: blur(8px); background:rgba(11,12,16,.6); border-bottom:1px solid #1a1b24}
+    .spacer{flex:1}
+    .row{display:flex; align-items:center}
+    .topbar .row{gap:12px; padding:10px 0}
+    .toggle{cursor:pointer; border:1px solid #2a2b3b; border-radius:10px; padding:8px 12px; color:#cbd5e1}
+  </style>
 </head>
 <body>
-    <!-- Images -->
-    <img src="pxfuel.jpg" alt="Description" width="500">
+  <div class="topbar">
+    <div class="wrap row">
+      <strong>Carlos D. Alvarez</strong>
+      <div class="spacer"></div>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact</a>
+      <button class="toggle" id="mode">🌙</button>
+    </div>
+  </div>
 
-    <!-- Text -->
-    <p>Wowzer this is cool</p>
-    <p>My Name is Carlos Alvarez!</p>
-    <p>This is my Github Pages! Welcome!</p>
-    <p>My favorite Color is Blue!</p>
-    <p>My favorite Food is Pizza!</p>
-    <p>My favorite Animal is a Dog!</p>
-    
+  <header>
+    <div class="hero">
+      <div class="wrap">
+        <h1 class="title">Cybersecurity ✕ Software Development</h1>
+        <p class="subtitle">
+          I build automation tools, security labs, and practical apps. Focus areas: network security, Python & C tooling, homelab infra, and ethical hacking.
+        </p>
+        <div class="cta">
+          <a class="btn" href="#projects">View Projects</a>
+          <a class="btn ghost" href="#contact">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+  </header>
 
-    <!-- Import Scripting from static/js/main.js -->
-    <script src="main.js"></script>
-    <!-- Import Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <main class="wrap">
+    <section id="about" class="grid cols-2">
+      <div class="card">
+        <h2>About</h2>
+        <p>I’m a Cybersecurity major at the University of Oklahoma Polytechnic Institute. I like turning ideas into working tools—CLI utilities, Discord bots, and security labs you can actually run.</p>
+        <p>Current interests: Active Directory attack paths, containerized lab setups, and clean automation for real-world workflows.</p>
+      </div>
+      <div class="card">
+        <h2>What I’m good at</h2>
+        <ul>
+          <li>Security labs (Kali, AD, BloodHound, Impacket)</li>
+          <li>Python scripting & CLI tooling</li>
+          <li>C fundamentals & systems basics</li>
+          <li>Homelab: Proxmox, Docker, Nextcloud, Cloudflare Tunnels</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="chips">
+        <span class="chip">Python</span><span class="chip">C</span><span class="chip">Bash</span>
+        <span class="chip">Docker</span><span class="chip">Proxmox</span><span class="chip">Kali</span>
+        <span class="chip">Wireshark</span><span class="chip">Impacket</span><span class="chip">BloodHound</span>
+        <span class="chip">Git/GitHub</span><span class="chip">Linux</span><span class="chip">Networking</span>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="grid cols-3">
+        <article class="card">
+          <h3>PersonalCalc (C)</h3>
+          <p>Modular C calculator with ASCII UI and history logs.</p>
+          <div class="chips"><span class="chip">C</span><span class="chip">Make</span></div>
+          <p><a href="https://github.com/Calva15/personalcalc" target="_blank">Repo</a> · <a href="#" target="_blank">Demo</a></p>
+        </article>
+        <article class="card">
+          <h3>Weather Dashboard</h3>
+          <p>Python app using Open-Meteo; Discord webhook alerts & CLI flags.</p>
+          <div class="chips"><span class="chip">Python</span><span class="chip">APIs</span></div>
+          <p><a href="https://github.com/Calva15/weather_dashboard" target="_blank">Repo</a></p>
+        </article>
+        <article class="card">
+          <h3>DayBuckets CLI</h3>
+          <p>Fetches images + metadata, buckets by date, outputs JSON/Markdown.</p>
+          <div class="chips"><span class="chip">Python</span><span class="chip">CLI</span></div>
+          <p><a href="https://github.com/Calva15/daybuckets" target="_blank">Repo</a></p>
+        </article>
+        <article class="card">
+          <h3>S.P.A.R.K Discord Bot</h3>
+          <p>AI-powered bot with modular cogs (admin/chat), Railway deploy.</p>
+          <div class="chips"><span class="chip">Python</span><span class="chip">Discord</span></div>
+          <p><a href="https://github.com/Calva15/spark-discordbot" target="_blank">Repo</a></p>
+        </article>
+        <article class="card">
+          <h3>AD Lab Takedown</h3>
+          <p>Write-up + scripts for a vulnerable AD lab from foothold to DA.</p>
+          <div class="chips"><span class="chip">Kali</span><span class="chip">AD</span></div>
+          <p><a href="projects/ad-lab/index.html">Case study</a></p>
+        </article>
+        <article class="card">
+          <h3>Linux Cleanup Script</h3>
+          <p>System-wide cleanup: rotates logs, prunes temp & old files.</p>
+          <div class="chips"><span class="chip">Bash</span></div>
+          <p><a href="https://github.com/Calva15/linux-cleanup" target="_blank">Repo</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="resume" class="grid cols-2">
+      <div class="card">
+        <h2>Resume</h2>
+        <p>Grab the latest copy of my resume here.</p>
+        <p><a class="btn" href="resume/Carlos_Alvarez_Resume.pdf" target="_blank">Download PDF</a></p>
+      </div>
+      <div class="card">
+        <h2>Highlights</h2>
+        <ul>
+          <li>Built a homelab with Proxmox + Nextcloud + Cloudflare Tunnels</li>
+          <li>Automated file workflows with Python CLIs</li>
+          <li>Active Directory attack graph exploration (BloodHound)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="grid cols-2">
+      <div class="card">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:c.alvarez0215@ou.edu">c.alvarez0215@ou.edu</a></p>
+        <p>GitHub: <a href="https://github.com/Calva15" target="_blank">@Calva15</a></p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/" target="_blank">/in/your-profile</a></p>
+      </div>
+      <div class="card">
+        <h2>Credits</h2>
+        <p>Built with plain HTML/CSS. Deployed on GitHub Pages.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© <span id="y"></span> Carlos D. Alvarez</div>
+  </footer>
+
+  <script>
+    // Dark mode toggle (persists in localStorage)
+    const btn=document.getElementById('mode');
+    const k='prefers-dark'; const on=()=>document.documentElement.dataset.theme='dark';
+    const off=()=>document.documentElement.dataset.theme='light';
+    const saved=localStorage.getItem(k)||'dark'; (saved==='dark')?on():off();
+    btn.addEventListener('click',()=>{const n=(document.documentElement.dataset.theme==='dark')?'light':'dark';
+      localStorage.setItem(k,n); (n==='dark')?on():off();});
+    document.getElementById('y').textContent=new Date().getFullYear();
+  </script>
+  <style>
+    /* light theme override */
+    html[data-theme="light"] body{background:#f6f7fb;color:#0b0c10}
+    html[data-theme="light"] .card{background:#fff; border-color:#e6e8ef}
+    html[data-theme="light"] nav a{color:#475569}
+    html[data-theme="light"] .subtitle{color:#475569}
+  </style>
 </body>
 </html>
